@@ -9,7 +9,8 @@ socket.on('connect', function(sock) {
     socket.emit('piconnected',{id:"PiZero"});
 
     socket.on('setRGB', function(sock) { 
-        console.log(sock);
+        //console.log(sock);
+        var dataToSend;
         const python = spawn('python3', ['start_leds.py']);
         python.stdin.write(JSON.stringify(sock));
 
