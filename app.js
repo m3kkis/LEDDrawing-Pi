@@ -1,4 +1,4 @@
-var {spawn} = require('child_process');
+var spawn = require('child_process').spawn;
 var io = require('socket.io-client');
 var socket = io.connect("http://localhost:3000", {
     reconnection: true
@@ -9,20 +9,20 @@ socket.on('connect', function(sock) {
     socket.emit('piconnected',{id:"PiZero"});
 
     socket.on('setRGB', function(sock) { 
-        //console.log(sock);
+        const python = spawn('python3', ['./start_leds.py', JSON.stringify(sock) ]);
+
         var dataToSend;
-        const python = spawn('python3', ['start_leds.py']);
-        python.stdin.write(JSON.stringify(sock));
 
         python.stdout.on('data', function (data) {
-            console.log('Pipe data from python script ...');
-            dataToSend = data.toString();
+            console.log('Stream data...');
+            dataToSend += data.toString();
         });
 
         python.on('close', (code) => {
-            console.log(`child process close all stdio with code ${code}`);
-            // send data to browser
+            console.log(`Child process exit code ${code}`);
             console.log(dataToSend);
         });
+
+        python.stdin.end();
     });
 });
