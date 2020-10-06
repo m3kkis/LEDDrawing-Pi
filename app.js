@@ -1,8 +1,15 @@
 var spawn = require('child_process').spawn;
 var io = require('socket.io-client');
+
+var socket = io.connect("https://leddrawing.herokuapp.com/", {
+    reconnection: true
+});
+
+/*
 var socket = io.connect("http://localhost:3000", {
     reconnection: true
 });
+*/
 
 socket.on('connect', function(sock) { 
     console.log('Connected!');
