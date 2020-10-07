@@ -7,10 +7,17 @@ This repository is part of a project that allows users to do a drawing online on
 
 ## Requirements
 * Raspberry Pi (In my case I used the Raspberr Pi Zero W)
+* WS2812B LED
 * Python 3.X
 * Pip 3.X
 * Nodejs v10 (only tested on v10 so far)
 * PM2 (optional, depends on your need)
+
+## Circuit
+* If Raspberry Pi Zero W solder header
+* Connect the 5v from LED to 5v Pin on Pi
+* Connect GND to GND Pin on Pi
+* Connect DIN to GPIO 18 on Pi
 
 ## Installation
 ```
