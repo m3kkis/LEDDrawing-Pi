@@ -7,7 +7,9 @@ This repository is part of a project that allows users to do a drawing online on
 
 ## Requirements
 * Raspberry Pi (In my case I used the Raspberr Pi Zero W)
-* This requires Nodejs v10 (only tested on v10 so far)
+* Python 3.X
+* Pip 3.X
+* Nodejs v10 (only tested on v10 so far)
 * PM2 (optional, depends on your need)
 
 ## Installation
@@ -15,6 +17,8 @@ This repository is part of a project that allows users to do a drawing online on
 git clone https://github.com/m3kkis/LEDDrawing-Pi.git
 cd LEDDrawing-Pi
 npm install
+sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
+sudo python3 -m pip install --force-reinstall adafruit-blinka
 ```
 ## Set up
 If you are going to host the WEB Server somewhere other than locally you need to make a change in the file `app.j`. Instead of connecting to `localhost:3000` just replace it with your webserver address `https://example.com`
