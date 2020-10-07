@@ -1,7 +1,7 @@
 # LEDDrawing-Pi [ RASPBERRRY PI ]
 ***IMPORTANT:** This project need https://github.com/m3kkis/LEDDrawing-Web to work properly.*
 
-This repository is part of a project that allows users to do a drawing online on a webpage and then the information gets sent over to my raspberry pi and replicates it on my 16x16 LED frame. It is by running 2 NodeJS servers and communicating between eachother by using SocketsIO.
+This repository is part of a project that allows users to do a drawing online on a webpage and then the information gets sent over to my raspberry pi and replicates it on my 16x16 LED frame. It is by running 2 NodeJS servers and communicating between eachother by using SocketsIO and executing a python script by spawning a child process.
 
 ![alt text](https://github.com/m3kkis/LEDDrawing-Pi/blob/master/leddraw.gif?raw=true)
 
